@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 const Body = () => {
   return (
     <React.Fragment>
-      <div className="p-4 shadow-md grid grid-flow-col">
+      <div className="p-4 shadow-md grid grid-flow-col bg-teal-700 text-white">
         <div className="col-span-4 font-bold">Frontend Machine Coding</div>
         <div className="col-span-8">
           <ul className="flex space-x-3">
