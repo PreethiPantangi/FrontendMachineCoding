@@ -53,6 +53,7 @@ const NestedComments = () => {
           id={comment.id} 
           key={comment.id} 
           replies={comment.replies ? comment.replies : []}
+          setcomments = {setComments}
           />
         ))}
       </div>

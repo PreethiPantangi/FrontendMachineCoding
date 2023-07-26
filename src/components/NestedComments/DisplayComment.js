@@ -1,12 +1,42 @@
 import React, { useState } from "react";
 
-const DisplayComment = ({ comment, id, replies}) => {
+const DisplayComment = ({ comment, id, replies, setcomments}) => {
 
   const [shouldShowReplyBox, setShouldShowReplyBox] = useState(false);
-  const [replyComment, setReplyComment] = useState([]);
+  const [replyComment, setReplyComment] = useState('');
+
+  const updateCommentReplies = (comment) => {
+    if(comment.id === id) {
+      let replyObj = {
+        id: new Date().valueOf(),
+        comment: replyComment, 
+        replies: []
+      };
+      if(comment.replies) {
+        comment.replies.push(replyObj)
+      } else {
+        comment['replies'] = replyObj;
+      }
+      setReplyComment('');
+      return;
+    }
+    if(comment.replies) {
+      let replies = comment.replies;
+      replies.forEach(replyComment => {
+        updateCommentReplies(replyComment);
+      });
+    }
+  }
 
   const addReplyComment = () => {
-    console.log(id , ' - ' , replyComment); 
+    setReplyComment('');
+    let comments = JSON.parse(localStorage.getItem('comments'));
+    comments.forEach(comment => {
+      updateCommentReplies(comment);
+      setcomments(comments);
+      setShouldShowReplyBox(!shouldShowReplyBox);
+    });
+    localStorage.setItem('comments', JSON.stringify(comments));
   }
   
   return (
@@ -31,6 +61,7 @@ const DisplayComment = ({ comment, id, replies}) => {
             className="p-3 border border-gray-400 w-2/3"
             id={"reply" + id}
             onChange={(e) => setReplyComment(e.target.value)}
+            value={replyComment}
           />
           <button
             className="border border-solid bg-gray-300 p-3"
@@ -49,6 +80,7 @@ const DisplayComment = ({ comment, id, replies}) => {
               id={reply.id}
               key={reply.id}
               replies={reply.replies ? reply.replies : []}
+              setcomments = {setcomments}
             />
           ))}
         </div>
