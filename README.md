@@ -1,6 +1,6 @@
 ## Structure of the nested comments
 
-{
+```{
   id: 1,
   comment: 'Comment 1',
   replies: [
@@ -33,4 +33,4 @@
       comment: "This is reply 2 for comment 2"
     }
   ]
-}
+}```
