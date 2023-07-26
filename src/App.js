@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
 import NestedComments from './components/NestedComments/NestedComments';
-import StarRating from './components/StarRating';
+import StarRating from './components/StarRating/StarRating';
 import React from 'react';
 import Body from './components/Body';
 
