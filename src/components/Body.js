@@ -18,6 +18,11 @@ const Body = () => {
                 Modal Component
               </li>
             </Link>
+            <Link to="/tab">
+              <li className="cursor-pointer hover:font-semibold">
+                Tab Component
+              </li>
+            </Link>
           </ul>
         </div>
       </div>

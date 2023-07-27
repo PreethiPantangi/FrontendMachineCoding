@@ -1,5 +1,8 @@
-## Structure of the nested comments
+## Practicing Front end machine coding questions 
 
+## 1. Nested Comments
+
+### Structure of the nested comments
 ```
 {
   id: 1,
@@ -37,3 +40,6 @@
 }
 
 ```
+## 2. Modal Component 
+
+## 3. Tab Feature
