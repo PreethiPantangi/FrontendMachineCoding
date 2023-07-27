@@ -1,9 +1,10 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import './App.css';
-import NestedComments from './components/NestedComments/NestedComments';
-import StarRating from './components/StarRating/StarRating';
 import React from 'react';
 import Body from './components/Body';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import './App.css';
+
+import NestedComments from './components/NestedComments/NestedComments';
+import Modal from './components/Modal/Modal';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
       element: <Body/>,
       children: [
         {path: '/', element: <NestedComments/>},
-        {path: '/starRating', element: <StarRating/>}
+        {path: '/modal', element: <Modal/>}
       ]
     }
   ]);

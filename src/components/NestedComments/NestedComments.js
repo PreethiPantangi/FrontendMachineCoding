@@ -32,7 +32,7 @@ const NestedComments = () => {
 
   return (
     <div>
-      <p className="text-center mt-4 font-semibold">Nested Comments</p>
+      <p className="text-center mt-4 font-bold">Nested Comments</p>
       <div className="m-4 text-center">
         <input
           type="text"
