@@ -46,6 +46,9 @@ const NestedComments = () => {
           onClick={addComment}  
         >Comment</button>
       </div>
+      {
+        comments.length <= 0 && <div className="text-center text-gray-600">No comments made!</div>
+      }
       <div className="m-4">
         {comments.map((comment) => (
           <DisplayComment 

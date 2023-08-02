@@ -19,7 +19,7 @@ const TabBody = ({tabsList}) => {
             tabsList.map((tab) => (
               <div 
                 key={tab.id} 
-                className={"p-4 shadow-md cursor-pointer bg-blue-500 w-52 text-white " + (tab.id === activeTabId ? ' bg-white border border-gray-400 text-black font-bold' : '')}
+                className={"p-4 shadow-md cursor-pointer bg-blue-500 w-52 font-bold" + (tab.id === activeTabId ? ' bg-white border border-gray-400 text-black font-bold' : '')}
                 onClick={() => setActiveTabId(tab.id)}
               >
                 {tab.tabName}

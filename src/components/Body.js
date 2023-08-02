@@ -23,6 +23,11 @@ const Body = () => {
                 Tab Component
               </li>
             </Link>
+            <Link to="/toDo">
+              <li className="cursor-pointer hover:font-semibold">
+                To Do App
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
